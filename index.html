@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        .shoe {
+            display: inline-block;
+            margin: 1em;
+            text-align: center;
+        }
+
+        .shoe img {
+            width: 200px;
+            height: auto;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 1em;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5em;
+            margin-top: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 1em;
+            margin-top: 1em;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shoes Shop</h1>
+        <nav>
+            <a href="#home" onclick="showSection('home')">Home</a>
+            <a href="#login" onclick="showSection('login')">Login</a>
+            <a href="#signup" onclick="showSection('signup')">Sign Up</a>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Featured Shoes</h2>
+            <div class="shoe">
+                <img src="shoe1.jpg" alt="Shoe 1">
+                <p>Stylish Sneaker - $50</p>
+            </div>
+            <div class="shoe">
+                <img src="shoe2.jpg" alt="Shoe 2">
+                <p>Classic Boot - $80</p>
+            </div>
+            <!-- Add more shoes as needed -->
+        </section>
+
+        <section id="login" style="display: none;">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section id="signup" style="display: none;">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Shoes Shop. All rights reserved.</p>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // Handle login logic here
+                    alert('Login functionality is not implemented yet.');
+                });
+            }
+
+            if (signupForm) {
+                signupForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // Handle signup logic here
+                    alert('Signup functionality is not implemented yet.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
