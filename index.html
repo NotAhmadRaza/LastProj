@@ -3,156 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoes Shop</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1em;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 1em;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 2em;
-        }
-
-        .shoe {
-            display: inline-block;
-            margin: 1em;
-            text-align: center;
-        }
-
-        .shoe img {
-            width: 200px;
-            height: auto;
-        }
-
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        label {
-            display: block;
-            margin-top: 1em;
-        }
-
-        input {
-            width: 100%;
-            padding: 0.5em;
-            margin-top: 0.5em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            display: block;
-            width: 100%;
-            padding: 1em;
-            margin-top: 1em;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Ahmnated Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Shoes Shop</h1>
-        <nav>
-            <a href="#home" onclick="showSection('home')">Home</a>
-            <a href="#login" onclick="showSection('login')">Login</a>
-            <a href="#signup" onclick="showSection('signup')">Sign Up</a>
-        </nav>
+        <div class="container">
+            <h1 class="logo">Restaurant</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section id="home">
-            <h2>Featured Shoes</h2>
-            <div class="shoe">
-                <img src="shoe1.jpg" alt="Shoe 1">
-                <p>Stylish Sneaker - $50</p>
-            </div>
-            <div class="shoe">
-                <img src="shoe2.jpg" alt="Shoe 2">
-                <p>Classic Boot - $80</p>
-            </div>
-            <!-- Add more shoes as needed -->
-        </section>
 
-        <section id="login" style="display: none;">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Login</button>
-            </form>
-        </section>
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to Our Restaurant</h2>
+            <p>Enjoy the best dining experience.</p>
+            <a href="#menu" class="btn">Explore Menu</a>
+        </div>
+    </section>
 
-        <section id="signup" style="display: none;">
-            <h2>Sign Up</h2>
-            <form id="signupForm">
-                <label for="name">Name:</label>
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Our restaurant offers a delightful variety of dishes with fresh ingredients and authentic flavors. Come and enjoy a wonderful meal in a cozy and stylish setting.</p>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <ul>
+                <li><span>Grilled Salmon</span> - $25</li>
+                <li><span>Margherita Pizza</span> - $15</li>
+                <li><span>Spaghetti Carbonara</span> - $18</li>
+                <li><span>Caesar Salad</span> - $12</li>
+                <li><span>Chocolate Lava Cake</span> - $10</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="https://www.pakistantravelblog.com/wp-content/uploads/2020/06/places-to-eat-in-islamabad-750x400.jpg" alt="Restaurant Image 1">
+                <img src="https://foodnerd.s3.eu-west-1.amazonaws.com/production/image/file/277/Rakaposhi-Serena-Islamabad.png" alt="Restaurant Image 2">
+                <img src="https://foodnerd.s3.eu-west-1.amazonaws.com/production/image/file/279/Highland-resort-Islamabad.jpg" alt="Restaurant Image 3">
+                <img src="https://foodnerd.s3.eu-west-1.amazonaws.com/production/image/file/281/Monal-Islamabad.jpg" alt="Restaurant Image 4">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
+                
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Sign Up</button>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
             </form>
-        </section>
-    </main>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Shoes Shop. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Stylish Restaurant. All Rights Reserved.</p>
+        </div>
     </footer>
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('main > section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById(sectionId).style.display = 'block';
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const loginForm = document.getElementById('loginForm');
-            const signupForm = document.getElementById('signupForm');
-
-            if (loginForm) {
-                loginForm.addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    // Handle login logic here
-                    alert('Login functionality is not implemented yet.');
-                });
-            }
-
-            if (signupForm) {
-                signupForm.addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    // Handle signup logic here
-                    alert('Signup functionality is not implemented yet.');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
